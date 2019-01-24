@@ -1,53 +1,25 @@
-# zhulogic-design-top
-## 组件之间传值 采用全局变量
-```js
-import VueEventProxy from 'vue-event-proxy'
-//全局事件代理
-Vue.use(VueEventProxy)
-```
-```js   global-events.js
-const prefix = 'global:'
-
-export default {
-  // 商品规格状态
-  SKU_STATUS: `${prefix}SKU_STATUS`,
-  
-}
-
-```
-```js
-mounted(){
-    this.$on(GE.SKU_STATUS, ()=>{
-      console.log('123')
-    })
-
-  }
-```
-```js
- methods:{
-    onClickBigBtn(){
-      this.$emit(GE.SKU_STATUS)
-    }
-  }
-```
+#vue-backdrop
+> Mint-ui(Vue2.x) widget vue-backdrop based on sass &amp; webpack.
 
 
-## Project setup
-```
-npm install
-```
+## resource:
++ http://www.cnblogs.com/Kummy/p/4966937.html
++ https://github.com/steven5538/vue-button
++ https://yarnpkg.com/en/docs/install
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## props:
+| name | type | value | description |
+| :----| :----| :----| :----|
+| visible  | Boolean | true/false | v-show |
+| cssClass  | String | any | none |
+| backgroundColor  | String | #000/#FFF | default background-color |
+| zIndex  | Number | 1/2/100 | z-index |
+| opacity  | Number | 0.1-1 | opacity |
+| position  | String | 'absolute/fixed' | css position |
 
-### Lints and fixes files
-```
-npm run lint
+
+## usage:
+```html
+<vue-backdrop :visible="true" />
 ```
